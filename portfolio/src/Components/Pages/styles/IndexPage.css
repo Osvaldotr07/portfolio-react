@@ -1,0 +1,13 @@
+.img-hero-container {
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    padding: 0 ;
+} 
+.info-index {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
