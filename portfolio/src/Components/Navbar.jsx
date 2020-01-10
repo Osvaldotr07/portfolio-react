@@ -24,7 +24,7 @@ export default function Navbar(){
                                         </Link>
                                     </div>
                                     <div className="col-sm-4 options">
-                                        <Link to="/posts" className="nav-link">
+                                        <Link to="/Skills" className="nav-link">
                                             <li className="nav-item navbar-title"><MdBook size={20}/> Skills</li>
                                         </Link>
                                     </div>

@@ -9,7 +9,6 @@ import '../styles/CardPresentation.css'
 export default function CardPresentation(props){
     return (
         <React.Fragment>
-            
             <Card style={{width:'26rem', height: '100%'}} >
                 <Card.Img  variant='top' src={image}/>
                 <Card.Body>
