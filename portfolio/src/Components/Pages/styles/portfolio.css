@@ -1,0 +1,10 @@
+body {
+    background: rgb(34,195,145);
+    background: linear-gradient(0deg, rgba(34,195,145,1) 0%, rgba(45,91,253,1) 100%);
+}
+.portfolio__container {
+    background-image: url('../../../image/stars.svg');
+}
+.portfolio__title {
+    color: white;
+}

@@ -1,43 +1,41 @@
 import React from 'react'
 import CardProject from '../CardProject'
-import Stars from '../../image/stars.svg'
-import { Container, Row, Col, Image} from 'react-bootstrap/'
-
-export default class Portfolio extends React.Component {
+import { Container, Row, Col} from 'react-bootstrap/'
+import {connect} from 'react-redux'
+import './styles/portfolio.css'
+import * as projectsActions from '../../actions/projectsActions'
+import Loader from '../Loader'
+class Portfolio extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             loading: true,
             error: null,
-            data: []
         }
     }
-
     componentDidMount(){
-        this.fetchData()
+        this.props.traerTodos()
+        setTimeout(() => {
+            this.setState({loading: false})
+        }, 1000)
+
+        
     }
-    fetchData = async () => {
-        let response = await fetch('/data')
-        let data = await response.json()
-
-        this.setState({data: data})
-
-        console.log(this.state)
-    }
-
     render(){
-        return(    
+        if(this.state.loading){
+            return (
+                <Loader />
+            )
+        }
+        return( 
             <React.Fragment>
                 <Container fluid style={{margin: '0', padding: '0'}}>
                     <Row>
-                        <Col xs={12} lg={12} md={12} sm={12} style={{backgroundColor:'black', height:'200px'}}>
-                            <Image src={Stars} width={'100%'} height={'200px'} fluid  rounded/>
-                        </Col> 
-                        <Col xs={12} lg={12} md={12} sm={12} >
-                            <h1 className="center" >Projects</h1>
+                        <Col xs={12} lg={12} md={12} sm={12} className="portfolio__container" >
+                            <h1 className="portfolio__title center" >Projects</h1>
                             <Row>
-                                {this.state.data.map(item =>
-                                    <Col xs={6} md={6} lg={4} sm={6} xs key={item.id}>
+                                {this.props.projects.map(item =>
+                                    <Col xs={6} md={6} lg={4} sm={6}  key={item.id}>
                                         <CardProject title={item.title} description={item.description} image={item.image} url={item.url}/>
                                     </Col>    
                                 )}
@@ -49,3 +47,9 @@ export default class Portfolio extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (reducers) => {
+    return reducers.projectReducers
+}
+
+export default connect(mapStateToProps, projectsActions)(Portfolio)

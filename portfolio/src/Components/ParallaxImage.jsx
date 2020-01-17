@@ -15,24 +15,24 @@ export default class ParallaxImage extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <div class="parallax-container">
-                    <div class="parallax"><img src={this.props.firstImage} alt="hero"/></div>
+                <div className="parallax-container">
+                    <div className="parallax"><img src={this.props.firstImage} alt="hero"/></div>
                 </div>
-                <div class="section white">
-                    <div class="row container">
-                        <h2 class="header">{this.props.description}</h2>
+                <div className="section white">
+                    <div className="row container">
+                        <h2 className="header">{this.props.description}</h2>
                     </div>
                 </div>
-                <div class="parallax-container">
-                    <div class="parallax"><img src={this.props.secondImage} alt="hero"/></div>
+                <div className="parallax-container">
+                    <div className="parallax"><img src={this.props.secondImage} alt="hero"/></div>
                 </div>
-                <div class="section white">
-                    <div class="row container">
-                            <h2 class="header">{this.props.secondDescription}</h2>
+                <div className="section white">
+                    <div className="row container">
+                            <h2 className="header">{this.props.secondDescription}</h2>
                     </div>
                 </div>
-                <div class="parallax-container">
-                    <div class="parallax"><img src={this.props.thirdImage} alt="hero"/></div>
+                <div className="parallax-container">
+                    <div className="parallax"><img src={this.props.thirdImage} alt="hero"/></div>
                 </div>
             </React.Fragment>
         )

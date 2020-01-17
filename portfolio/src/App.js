@@ -11,7 +11,7 @@ import {
   Switch, 
   Route } from 'react-router-dom'
 
-
+//Redux
 function App() {
   return (
     <BrowserRouter>

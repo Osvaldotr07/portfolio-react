@@ -4,3 +4,13 @@
 .icon-style-inside {
     margin-right: 7px;
 }
+.card__container {
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .2);
+}
+
+.card__container--img {
+    overflow: hidden;
+}
